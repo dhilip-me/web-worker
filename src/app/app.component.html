@@ -1,1 +1,24 @@
-Web worker example
+<h2>Web Worker Comparison</h2>
+<p>Target N for Fibonacci: 
+    <input type="number" [(ngModel)]="fibNumber" min="1" max="45">
+</p>
+
+<div style="display: flex; justify-content: space-around; margin-top: 20px;">
+    
+    <div style="padding: 15px; border: 1px solid red; width: 45%;">
+    <h3>🛑 Blocking UI (No Worker)</h3>
+    <button (click)="startBlockingTask()">Run Blocking Task</button>
+    <p>Result: **{{ blockingResult }}**</p>
+    <p>Time Taken: {{ blockingTime }}ms</p>
+    <p style="color: red;">⚠️ UI **freezes** until calculation is done.</p>
+    </div>
+
+    <div style="padding: 15px; border: 1px solid green; width: 45%;">
+    <h3>✅ Responsive UI (Separate Worker)</h3>
+    <button (click)="startWorkerTask()">Run Worker Task</button>
+    <p>Result: **{{ workerResult }}**</p>
+    <p>Time Taken: {{ workerTime }}ms</p>
+    <p style="color: green;">✨ UI **stays responsive** during calculation.</p>
+    </div>
+
+</div>
